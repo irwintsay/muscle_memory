@@ -36,7 +36,8 @@ body {
 }
 
 #background {
-  background: url('https://images5.alphacoders.com/387/387340.jpg');
+  /*background: url('https://images5.alphacoders.com/387/387340.jpg');*/
+  background: url('arnold-bicep.jpg');
   background-attachment: fixed;
   background-size: cover;
   position: fixed;

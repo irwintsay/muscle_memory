@@ -16,11 +16,11 @@
 
 // Randomize Backgrounds
 var arnoldBackgrounds = [
-  'https://stopthehitch.files.wordpress.com/2013/06/arnold-schwarzenegger-1920x1080.jpg',
-  'https://images5.alphacoders.com/387/387340.jpg',
-  'https://i.ytimg.com/vi/JC5WpGw7pag/maxresdefault.jpg',
-  'http://s1.1zoom.net/big0/963/353960-admin.jpg',
-  'http://sixpackmakeover.com/wp-content/uploads/2014/12/arnold-schwarzenegger-4466x2791-wallpaper-2164878.jpg'
+  '/assets/arnold-bicep.jpg',
+  '/assets/arnold-comp.jpg',
+  '/assets/arnold-pose.jpg',
+  '/assets/arnold-row.jpg',
+  '/assets/arnold-sky.jpg'
 ];
 
 randomBG = arnoldBackgrounds[Math.floor(Math.random() * arnoldBackgrounds.length)];
