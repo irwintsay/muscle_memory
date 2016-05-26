@@ -34,8 +34,8 @@ class Api::WorkoutsController < ApplicationController
   end
 
 #                  DELETE /api/workouts/:id(.:format)      api/workouts#destroy
-  def delete
-    this_workout = Workout.find params[:id]
+  def destroy
+    this_workout = Workout.find(params[:id])
     this_workout.destroy
     render json: { success: "Deleted successfully" }
   end

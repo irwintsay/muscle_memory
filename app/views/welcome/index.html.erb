@@ -1,2 +1,55 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div ng-controller="MuscleMemoryController">
+  <h1 id="title">Workout of the Day</h1>
+  <div id="wod" class="workouts" ng-model="randomWorkout">
+    <h1>{{ randomWorkout.name }}</h1>
+    <h1>{{ randomWorkout.workout }}</h1>
+    <h2>Author: {{ randomWorkout.author }}</h2>
+    <h3>Reps: {{ randomWorkout.reps }}</h3>
+    <h3>Sets: {{ randomWorkout.sets }}</h3>
+    <h3>Weight: {{ randomWorkout.weight }}</h3>
+  </div>
+
+  <h1>Create New Workout</h1>
+  <div id="new-workout" class="workouts">
+    <form id="workout-form" name="createWorkout" ng-submit="saveNewWorkout()">
+      <input type="text" placeholder="Name of Workout" ng-model="newWorkout.name">
+      <input type="text" placeholder="Workout" ng-model="newWorkout.workout">
+      <input type="text" placeholder="Author" ng-model="newWorkout.author">
+      <input type="text" placeholder="Reps" ng-model="newWorkout.reps">
+      <input type="text" placeholder="Sets" ng-model="newWorkout.sets">
+      <input type="text" placeholder="Weight" ng-model="newWorkout.weight">
+      <input type="submit" name="name" value="Submit">
+    </form>
+
+  </div>
+
+  <h1 id="second-title">All Workouts</h1>
+  <!-- <div class="workouts" ng-repeat="workout in allWorkouts">
+    <h1>{{ workout.name }}</h1>
+    <h1>{{ workout.workout}}</h1>
+    <h2>Author: {{ workout.author }}</h2>
+    <h3>Reps: {{ workout.reps }}</h3>
+    <h3>Sets: {{ workout.sets }}</h3>
+    <h3>Weight: {{ workout.weight }}</h3>
+    <button ng-click="deleteWorkout(workout.id)">Remove</button>
+  </div> -->
+  <div class="workouts" ng-repeat="workout in allWorkouts">
+    <form name="editWorkout" ng-show="editing" ng-submit="updateWorkout(workout)">
+      <input type="text" ng-model="workout.name">
+      <input type="text" ng-model="workout.workout">
+      <input type="text" ng-model="workout.author">
+      <input type="text" ng-model="workout.reps">
+      <input type="text" ng-model="workout.sets">
+      <input type="text" ng-model="workout.weight">
+      <input type="submit" ng-click="editing = !editing" value="Confirm">
+    </form>
+    <h1>{{ workout.name }}</h1>
+    <h1>{{ workout.workout}}</h1>
+    <h2>Author: {{ workout.author }}</h2>
+    <h3>Reps: {{ workout.reps }}</h3>
+    <h3>Sets: {{ workout.sets }}</h3>
+    <h3>Weight: {{ workout.weight }}</h3>
+    <button ng-click="editing = !editing">{{ editing ? 'Hide' : 'Edit' }}</button>
+    <button ng-click="deleteWorkout(workout.id)">Remove</button>
+  </div>
+</div>
